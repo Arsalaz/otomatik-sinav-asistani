@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Canlı ortam veya lokal ortam için dinamik API adresi (HTTPS güvenliği için)
                 const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-                const API_BASE_URL = isLocal ? 'http://127.0.0.1:5000' : 'https://senin-python-sunucun-adresi.com';
+                const API_BASE_URL = isLocal ? 'http://127.0.0.1:5000' : 'https://otomatik-sinav-asistani.onrender.com';
 
                 const response = await fetch(`${API_BASE_URL}/generate`, {
                     method: 'POST',
