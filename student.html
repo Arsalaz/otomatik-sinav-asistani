@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenci Paneli - EduAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap"></i> EduAI Öğrenci
+            </div>
+            
+            <nav class="menu">
+                <a href="#" class="menu-item active" id="menu-join-class">
+                    <i class="fa-solid fa-house"></i> Ana Sayfa
+                </a>
+                <a href="#" class="menu-item" id="menu-my-classes">
+                    <i class="fa-solid fa-users-class"></i> Sınıflarım
+                </a>
+            </nav>
+
+            <div class="user-profile" style="margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="color: #94a3b8; font-size: 0.8rem; margin-bottom: 5px;">Giriş Yapılan Hesap:</p>
+                <div style="color: white; font-size: 0.9rem; margin-bottom: 5px; word-break: break-all;" id="userEmailDisplay">Yükleniyor...</div>
+                <div style="font-size: 0.8rem; color: var(--primary); font-weight: bold; margin-bottom: 15px;" id="userRoleDisplay">-</div>
+                <button class="btn-outline" id="logoutBtn" style="width: 100%; border-color: #ef4444; color: #ef4444; padding: 10px; display: flex; justify-content: center; gap: 8px;">
+                    <i class="fa-solid fa-power-off"></i> Çıkış Yap
+                </button>
+            </div>
+        </aside>
+
+        <!-- Ana İçerik -->
+        <main class="main-content">
+            <div class="header">
+                <div>
+                    <h1 id="pageTitle">Merhaba, Öğrenci! 👋</h1>
+                    <p id="pageDesc">Buradan sınıflarına katılabilir ve sana atanan sınavları görebilirsin.</p>
+                </div>
+            </div>
+
+            <!-- BÖLÜM 1: SINIFA KATIL (Varsayılan) -->
+            <div class="content-grid" id="section-join-class" style="grid-template-columns: 1fr;">
+                <div class="parameters-section glass-card" style="display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 500px; margin: 0 auto;">
+                    <i class="fa-solid fa-users" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h2 style="color: white; margin-bottom: 1rem;">Bir Sınıfa Katıl</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Öğretmeninizin size verdiği Sınıf Kodunu girerek sınıfa katılın ve sınavları görün.</p>
+                    
+                    <div class="form-group" style="width: 100%;">
+                        <input type="text" id="classCode" placeholder="Örn: 9A-XYZ123" style="text-align: center; font-size: 1.2rem; letter-spacing: 2px;">
+                    </div>
+                    
+                    <button class="btn-primary" id="joinClassBtn">
+                        <i class="fa-solid fa-right-to-bracket"></i> Sınıfa Katıl
+                    </button>
+                </div>
+            </div>
+
+            <!-- BÖLÜM 2: SINIFLARIM (Gizli) -->
+            <div class="content-grid hidden" id="section-my-classes" style="grid-template-columns: 1fr;">
+                <div class="glass-card" style="min-height: 400px;">
+                    <h3 style="color: white; border-bottom: 1px solid var(--glass-border); padding-bottom: 15px; margin-bottom: 15px;">Kayıtlı Olduğum Sınıflar ve Sınavlar</h3>
+                    <div id="myClassesList">
+                        <!-- Öğrencinin sınıfları ve sınavları buraya gelecek -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- BÖLÜM 3: SINAV ÇÖZME ARAYÜZÜ (Başlangıçta Gizli) -->
+            <div id="section-exam" class="exam-container hidden glass-card" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                <div class="exam-header">
+                    <h2 id="examTitle">Sınav Başlığı</h2>
+                    <div class="exam-progress">Soru: <span id="currentQNum">1</span> / <span id="totalQNum">5</span></div>
+                </div>
+                
+                <div class="question-box">
+                    <h3 id="questionText">Soru metni buraya gelecek...</h3>
+                    <div class="options-container" id="optionsContainer">
+                        <!-- Şıklar buraya eklenecek -->
+                    </div>
+                </div>
+                
+                <div class="exam-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                    <button class="btn-outline" id="prevQBtn" style="display:none;"><i class="fa-solid fa-arrow-left"></i> Önceki</button>
+                    <div style="flex-grow: 1;"></div>
+                    <button class="btn-primary" id="nextQBtn" style="margin-top:0; width:auto; padding: 12px 30px;">Sonraki <i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="btn-primary" id="finishExamBtn" style="display:none; margin-top:0; width:auto; padding: 12px 30px; background-color: var(--success);">Sınavı Bitir <i class="fa-solid fa-flag-checkered"></i></button>
+                </div>
+            </div>
+
+            <!-- BÖLÜM 4: KARNE (Sonuç ve Telafi) ARAYÜZÜ (Başlangıçta Gizli) -->
+            <div id="section-report" class="report-container hidden glass-card" style="max-width: 800px; margin: 0 auto; width: 100%;">
+                <div class="report-header">
+                    <h2><i class="fa-solid fa-award"></i> Sınav Karnesi</h2>
+                    <div class="score-display">Puan: <span id="finalScore">100</span></div>
+                </div>
+                
+                <div class="report-content" id="reportContent">
+                    <!-- Yanlış sorular ve telafi videoları buraya gelecek -->
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn-primary" id="backToClassesBtn" style="max-width: 300px; margin: 0 auto;">
+                        <i class="fa-solid fa-house"></i> Sınıflarıma Dön
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Firebase Scriptleri (Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    
+    <script src="guard.js"></script>
+    <script src="student.js"></script>
+</body>
+</html>

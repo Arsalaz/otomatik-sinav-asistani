@@ -1,0 +1,211 @@
+Mevcut Gemini dosyalari kontrol ediliyor...
+[*] sosyalbilgiler5-1.unit.pdf zaten yuklu. ID: files/vdimkage0piy
+[*] sosyalbilgiler5-2.unit.pdf zaten yuklu. ID: files/gourivepbz2f
+[*] sosyalbilgiler5-3.unit.pdf zaten yuklu. ID: files/x8m51r6km4uw
+[*] sosyalbilgiler5-4.unit.pdf zaten yuklu. ID: files/be8xfj9p995o
+[*] sosyalbilgiler5-5.unit.pdf zaten yuklu. ID: files/l35a1wrl5rp3
+[*] sosyalbilgiler5-6.unit.pdf zaten yuklu. ID: files/wha3cvefji3s
+
+==================================================
+Yapay Zeka Sunucusu Calisiyor!
+Sistem hazir! Arayuzden istek gonderebilirsiniz.
+==================================================
+
+ * Debugger is active!
+ * Debugger PIN: 100-864-391
+Mevcut Gemini dosyalari kontrol ediliyor...
+[*] sosyalbilgiler5-1.unit.pdf zaten yuklu. ID: files/vdimkage0piy
+[*] sosyalbilgiler5-2.unit.pdf zaten yuklu. ID: files/gourivepbz2f
+[*] sosyalbilgiler5-3.unit.pdf zaten yuklu. ID: files/x8m51r6km4uw
+[*] sosyalbilgiler5-4.unit.pdf zaten yuklu. ID: files/be8xfj9p995o
+[*] sosyalbilgiler5-5.unit.pdf zaten yuklu. ID: files/l35a1wrl5rp3
+[*] sosyalbilgiler5-6.unit.pdf zaten yuklu. ID: files/wha3cvefji3s
+
+==================================================
+Yapay Zeka Sunucusu Calisiyor!
+Sistem hazir! Arayuzden istek gonderebilirsiniz.
+==================================================
+
+ * Serving Flask app 'server'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+Mevcut Gemini dosyalari kontrol ediliyor...
+[*] sosyalbilgiler5-1.unit.pdf zaten yuklu. ID: files/vdimkage0piy
+[*] sosyalbilgiler5-2.unit.pdf zaten yuklu. ID: files/gourivepbz2f
+[*] sosyalbilgiler5-3.unit.pdf zaten yuklu. ID: files/x8m51r6km4uw
+[*] sosyalbilgiler5-4.unit.pdf zaten yuklu. ID: files/be8xfj9p995o
+[*] sosyalbilgiler5-5.unit.pdf zaten yuklu. ID: files/l35a1wrl5rp3
+[*] sosyalbilgiler5-6.unit.pdf zaten yuklu. ID: files/wha3cvefji3s
+
+==================================================
+Yapay Zeka Sunucusu Calisiyor!
+Sistem hazir! Arayuzden istek gonderebilirsiniz.
+==================================================
+
+ * Debugger is active!
+ * Debugger PIN: 100-864-391
+--- YENI ISTEK GELDI ---
+Istek alindi: 5. Sinif Sosyal Bilgiler - 1. Unite - 1 Soru
+Deneme 1/5... (Kullanilan Dosya: sosyalbilgiler5-1.unit.pdf)
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+Traceback (most recent call last):
+  File "C:\Users\yiiil\Desktop\Mert\otomatik-sinav-asistani\server.py", line 146, in generate_questions
+    raise e # Baska bir hataysa direkt firlat
+    ^^^^^^^
+  File "C:\Users\yiiil\Desktop\Mert\otomatik-sinav-asistani\server.py", line 132, in generate_questions
+    response = client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\google\genai\models.py", line 6251, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\google\genai\models.py", line 4688, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\google\genai\_api_client.py", line 1750, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\google\genai\_api_client.py", line 1537, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\google\genai\_api_client.py", line 1514, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\google\genai\errors.py", line 173, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\google\genai\errors.py", line 202, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+127.0.0.1 - - [07/Oct/2026 12:35:17] "POST /generate HTTP/1.1" 500 -
+ * Detected change in 'C:\\Users\\yiiil\\Desktop\\Mert\\otomatik-sinav-asistani\\server.py', reloading
+ * Detected change in 'C:\\Users\\yiiil\\Desktop\\Mert\\otomatik-sinav-asistani\\server.py', reloading
+ * Restarting with stat
+Mevcut Gemini dosyalari kontrol ediliyor...
+[*] sosyalbilgiler5-1.unit.pdf zaten yuklu. ID: files/vdimkage0piy
+[*] sosyalbilgiler5-2.unit.pdf zaten yuklu. ID: files/gourivepbz2f
+[*] sosyalbilgiler5-3.unit.pdf zaten yuklu. ID: files/x8m51r6km4uw
+[*] sosyalbilgiler5-4.unit.pdf zaten yuklu. ID: files/be8xfj9p995o
+[*] sosyalbilgiler5-5.unit.pdf zaten yuklu. ID: files/l35a1wrl5rp3
+[*] sosyalbilgiler5-6.unit.pdf zaten yuklu. ID: files/wha3cvefji3s
+
+==================================================
+Yapay Zeka Sunucusu Calisiyor!
+Sistem hazir! Arayuzden istek gonderebilirsiniz.
+==================================================
+
+ * Debugger is active!
+Mevcut Gemini dosyalari kontrol ediliyor...
+[*] sosyalbilgiler5-1.unit.pdf zaten yuklu. ID: files/vdimkage0piy
+[*] sosyalbilgiler5-2.unit.pdf zaten yuklu. ID: files/gourivepbz2f
+[*] sosyalbilgiler5-3.unit.pdf zaten yuklu. ID: files/x8m51r6km4uw
+[*] sosyalbilgiler5-4.unit.pdf zaten yuklu. ID: files/be8xfj9p995o
+[*] sosyalbilgiler5-5.unit.pdf zaten yuklu. ID: files/l35a1wrl5rp3
+[*] sosyalbilgiler5-6.unit.pdf zaten yuklu. ID: files/wha3cvefji3s
+
+==================================================
+Yapay Zeka Sunucusu Calisiyor!
+Sistem hazir! Arayuzden istek gonderebilirsiniz.
+==================================================
+
+ * Debugger is active!
+ * Debugger PIN: 100-864-391
+ * Debugger PIN: 100-864-391
+--- YENI ISTEK GELDI ---
+Istek alindi: 5. Sinif Sosyal Bilgiler - 1. Unite - 1 Soru
+Deneme 1/5... (Kullanilan Dosya: sosyalbilgiler5-1.unit.pdf)
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+127.0.0.1 - - [07/Oct/2026 12:35:53] "POST /generate HTTP/1.1" 200 -
+--- YENI ISTEK GELDI ---
+127.0.0.1 - - [07/Oct/2026 12:37:09] "OPTIONS /generate HTTP/1.1" 200 -
+--- YENI ISTEK GELDI ---
+Istek alindi: 5. Sinif Sosyal Bilgiler - 3. Öğrenme Alanı: Ortak Mirasımız - 2 Soru
+Deneme 1/5... (Kullanilan Dosya: sosyalbilgiler5-3.unit.pdf)
+127.0.0.1 - - [07/Oct/2026 12:37:28] "POST /generate HTTP/1.1" 200 -
+--- YENI ISTEK GELDI ---
+127.0.0.1 - - [07/Oct/2026 12:40:18] "OPTIONS /generate HTTP/1.1" 200 -
+--- YENI ISTEK GELDI ---
+Istek alindi: 5. Sinif Sosyal Bilgiler - 6. Öğrenme Alanı: Teknoloji ve Sosyal Bilimler - 10 Soru
+Deneme 1/5... (Kullanilan Dosya: sosyalbilgiler5-6.unit.pdf)
+Sunucu yogun, 5 saniye sonra tekrar deneniyor...
+Deneme 2/5... (Kullanilan Dosya: sosyalbilgiler5-6.unit.pdf)
+Sunucu yogun, 5 saniye sonra tekrar deneniyor...
+Deneme 3/5... (Kullanilan Dosya: sosyalbilgiler5-6.unit.pdf)
+Sunucu yogun, 5 saniye sonra tekrar deneniyor...
+Deneme 4/5... (Kullanilan Dosya: sosyalbilgiler5-6.unit.pdf)
+Sunucu yogun, 5 saniye sonra tekrar deneniyor...
+Deneme 5/5... (Kullanilan Dosya: sosyalbilgiler5-6.unit.pdf)
+Traceback (most recent call last):
+  File "C:\Users\yiiil\Desktop\Mert\otomatik-sinav-asistani\server.py", line 132, in generate_questions
+    response = client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\google\genai\models.py", line 6251, in generate_content
+    response = self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\google\genai\models.py", line 4688, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\google\genai\_api_client.py", line 1750, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\google\genai\_api_client.py", line 1537, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\google\genai\_api_client.py", line 1514, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\google\genai\errors.py", line 173, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+  File "C:\Users\yiiil\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\google\genai\errors.py", line 204, in raise_error
+    raise ServerError(status_code, response_json, response)
+google.genai.errors.ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\yiiil\Desktop\Mert\otomatik-sinav-asistani\server.py", line 144, in generate_questions
+    raise Exception("Google sunuculari su an asiri yogun. Lutfen 5-10 dakika sonra tekrar deneyin.")
+Exception: Google sunuculari su an asiri yogun. Lutfen 5-10 dakika sonra tekrar deneyin.
+127.0.0.1 - - [07/Oct/2026 12:41:38] "POST /generate HTTP/1.1" 500 -
+ * Detected change in 'C:\\Users\\yiiil\\Desktop\\Mert\\otomatik-sinav-asistani\\server.py', reloading
+ * Detected change in 'C:\\Users\\yiiil\\Desktop\\Mert\\otomatik-sinav-asistani\\server.py', reloading
+ * Restarting with stat

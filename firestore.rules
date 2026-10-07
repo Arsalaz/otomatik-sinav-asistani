@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Herkesin güvenliğini sağlamak için:
+    // SADECE sisteme giriş yapmış (login olmuş) kullanıcılar veritabanına erişebilir.
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+
+    // İLERİ DÜZEY GÜVENLİK (Opsiyonel Kurallar)
+    
+    // 1. Öğrenciler sadece "kendi" çözdükleri sınav sonuçlarını (results) görebilir ve yazabilir:
+    match /results/{resultId} {
+      allow create: if request.auth != null && request.resource.data.studentId == request.auth.uid;
+      allow read, update, delete: if request.auth != null && (resource.data.studentId == request.auth.uid || request.auth.token.email.matches('.*@ogretmen.*'));
+    }
+
+    // 2. Sınavlar ve Sınıflar koleksiyonuna dışarıdan sahte veri eklenmesini engelle
+    match /exams/{examId} {
+      allow read: if request.auth != null;
+      // Sadece öğretmenler sınav oluşturabilir (Örn: emailinde ogretmen geçiyorsa)
+      allow write: if request.auth != null && request.auth.token.email.matches('.*@ogretmen.*'); 
+    }
+  }
+}
