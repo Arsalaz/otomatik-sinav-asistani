@@ -1,13 +1,19 @@
 :root {
-    --primary: #4F46E5;
-    --primary-hover: #4338ca;
-    --bg-dark: #0f172a;
-    --glass-bg: rgba(30, 41, 59, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
+    /* 60-30-10 Zıt Renk Standardı */
+    --primary: #ea580c;        /* %10 Vurgu/Aksan: Canlı Kehribar/Turuncu */
+    --primary-hover: #c2410c;
+    --sidebar-bg: #0f172a;     /* %30 Yapısal: Derin Asil Lacivert */
+    --sidebar-hover: #1e293b;
+    --bg-light: #f8fafc;       /* %60 Hakim Açık Zemin */
+    --card-bg: #ffffff;
+    --card-border: #e2e8f0;
+    --text-main: #0f172a;      /* Derin lacivert okunaklı yazı */
+    --text-muted: #64748b;
+    --text-light: #f8fafc;
     --sidebar-w: 260px;
-    --success: #10b981;
+    --success: #16a34a;
+    --warning: #f59e0b;
+    --danger: #dc2626;
 }
 
 * {
@@ -18,7 +24,7 @@
 }
 
 body {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-light);
     color: var(--text-main);
     min-height: 100vh;
     overflow-x: hidden;
@@ -33,14 +39,14 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: -1;
-    background: radial-gradient(circle at 15% 50%, rgba(79, 70, 229, 0.15), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.1), transparent 25%);
+    background: radial-gradient(circle at 15% 50%, rgba(234, 88, 12, 0.06), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(30, 58, 138, 0.08), transparent 25%);
     animation: pulse 15s infinite alternate;
 }
 
 @keyframes pulse {
     0% { transform: scale(1); }
-    100% { transform: scale(1.1); }
+    100% { transform: scale(1.05); }
 }
 
 .app-container {
@@ -48,13 +54,11 @@ body {
     min-height: 100vh;
 }
 
-/* Sidebar Tasarımı */
+/* Sidebar Tasarımı (%30 Yapısal Lacivert) */
 .sidebar {
     width: var(--sidebar-w);
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-right: 1px solid var(--glass-border);
+    background: var(--sidebar-bg);
+    border-right: 1px solid #1e293b;
     padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -66,7 +70,7 @@ body {
     gap: 12px;
     font-size: 1.5rem;
     font-weight: 700;
-    color: white;
+    color: #ffffff;
     margin-bottom: 3rem;
 }
 
@@ -87,7 +91,7 @@ body {
     align-items: center;
     gap: 12px;
     padding: 12px 16px;
-    color: var(--text-muted);
+    color: #94a3b8;
     text-decoration: none;
     border-radius: 12px;
     transition: all 0.3s ease;
@@ -95,14 +99,14 @@ body {
 }
 
 .menu-item:hover {
-    color: white;
-    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    background: var(--sidebar-hover);
 }
 
 .menu-item.active {
     background: var(--primary);
-    color: white;
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
 }
 
 .google-auth {
@@ -149,10 +153,7 @@ body {
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    background: linear-gradient(to right, #fff, #94a3b8);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-main);
 }
 
 .header p {
@@ -163,7 +164,7 @@ body {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    border: 2px solid var(--glass-border);
+    border: 2px solid #cbd5e1;
 }
 
 /* Grid Layout */
@@ -174,15 +175,13 @@ body {
     flex: 1;
 }
 
-/* Glass Card */
+/* White Clean Card */
 .glass-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
     padding: 2rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
 }
 
 /* Form Elemanları */
@@ -193,8 +192,8 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: #e2e8f0;
+    font-weight: 600;
+    color: var(--text-main);
 }
 
 .select-wrapper {
@@ -213,22 +212,24 @@ body {
 select, input[type="number"] {
     width: 100%;
     padding: 14px 16px;
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid var(--glass-border);
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
     border-radius: 12px;
-    color: white;
+    color: var(--text-main);
     font-size: 1rem;
     appearance: none;
     outline: none;
-    transition: border-color 0.3s;
+    transition: all 0.2s ease;
 }
 
 select:focus, input[type="number"]:focus {
     border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.15);
 }
 
 option {
-    background: var(--bg-dark);
+    background: #ffffff;
+    color: var(--text-main);
 }
 
 /* Toggle Switch */
@@ -426,7 +427,8 @@ input:checked + .slider:before {
     width: 100%;
     margin-top: 2rem;
     text-align: left;
-    background: rgba(0, 0, 0, 0.2);
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     padding: 1.5rem;
     border-radius: 12px;
     max-height: 250px;
@@ -436,7 +438,7 @@ input:checked + .slider:before {
 .mock-q {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .mock-q:last-child {
@@ -447,16 +449,18 @@ input:checked + .slider:before {
 
 .mock-q p {
     font-size: 0.95rem;
-    color: #e2e8f0;
+    color: var(--text-main);
     margin-bottom: 0.5rem;
+    font-weight: 500;
 }
 
 .mock-q span {
     font-size: 0.8rem;
     color: var(--success);
-    background: rgba(16, 185, 129, 0.1);
+    background: #dcfce7;
     padding: 2px 8px;
     border-radius: 4px;
+    font-weight: 600;
 }
 
 /* -------------------- YENİ: Sınav Ekranı Stilleri -------------------- */
@@ -472,7 +476,7 @@ input:checked + .slider:before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--card-border);
     padding-bottom: 1rem;
     margin-bottom: 1.5rem;
 }
@@ -480,10 +484,12 @@ input:checked + .slider:before {
 .exam-header h2 {
     color: var(--primary);
     font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .exam-progress {
-    background: rgba(255, 255, 255, 0.1);
+    background: #e2e8f0;
+    color: var(--text-main);
     padding: 6px 16px;
     border-radius: 20px;
     font-weight: 600;
@@ -493,7 +499,8 @@ input:checked + .slider:before {
     font-size: 1.3rem;
     line-height: 1.6;
     margin-bottom: 2rem;
-    color: white;
+    color: var(--text-main);
+    font-weight: 700;
 }
 
 .options-container {
@@ -503,36 +510,38 @@ input:checked + .slider:before {
 }
 
 .option-btn {
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid var(--glass-border);
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
     border-radius: 12px;
     padding: 16px 20px;
-    color: white;
+    color: var(--text-main);
     text-align: left;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.2s ease;
     display: flex;
     align-items: center;
 }
 
 .option-btn:hover {
-    background: rgba(79, 70, 229, 0.15);
+    background: #fff7ed;
     border-color: var(--primary);
-    transform: translateX(5px);
+    transform: translateX(4px);
+    color: #c2410c;
 }
 
 .option-btn.selected {
     background: var(--primary);
     border-color: var(--primary);
-    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(234, 88, 12, 0.35);
 }
 
 .exam-footer {
     display: flex;
     justify-content: space-between;
     margin-top: 2.5rem;
-    border-top: 1px solid var(--glass-border);
+    border-top: 1px solid var(--card-border);
     padding-top: 1.5rem;
 }
 
@@ -550,13 +559,13 @@ input:checked + .slider:before {
 
 .report-header h2 {
     font-size: 2rem;
-    color: #ffd700;
+    color: #b45309;
     margin-bottom: 1rem;
 }
 
 .score-display {
     font-size: 1.5rem;
-    background: rgba(16, 185, 129, 0.2);
+    background: #dcfce7;
     border: 1px solid var(--success);
     color: var(--success);
     display: inline-block;
@@ -572,14 +581,14 @@ input:checked + .slider:before {
 }
 
 .wrong-answer-card {
-    background: rgba(239, 68, 68, 0.05);
-    border: 1px solid rgba(239, 68, 68, 0.3);
+    background: #fef2f2;
+    border: 1px solid #fca5a5;
     border-radius: 16px;
     padding: 1.5rem;
 }
 
 .wrong-answer-card h4 {
-    color: #fca5a5;
+    color: #991b1b;
     margin-bottom: 10px;
 }
 
