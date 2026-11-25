@@ -1,9 +1,11 @@
-from google import genai
+import os
 import sys
+from google import genai
 
 try:
     print("Test basliyor...")
-    client = genai.Client(api_key="AQ.Ab8RN6K6IkjXeML9waU1bjtiTyaU0hnY1Aek7mwqcKn2r9xr0g")
+    # Anahtar koda gömülmez; GEMINI_API_KEY ortam değişkeninden okunur.
+    client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
     response = client.models.generate_content(
         model='gemini-2.5-flash',
         contents='Merhaba, bu bir test mesajidir.'
