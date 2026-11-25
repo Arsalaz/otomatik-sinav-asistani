@@ -11,17 +11,18 @@
 </head>
 
 <body class="login-body">
-    <div class="background-animation"></div>
-
-    <div class="login-container glass-card"
-        style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 300px;">
-        <i class="fa-solid fa-graduation-cap logo-icon" style="font-size: 4rem;"></i>
-        <h2 style="color: white; margin-top: 1rem;">EduAI'a Giriş Yapılıyor...</h2>
-        <p style="color: var(--text-muted); margin-top: 0.5rem;">Rolünüz kontrol ediliyor, lütfen bekleyin.</p>
-        <div style="margin-top: 2rem; color: var(--primary); font-size: 2rem;">
-            <i class="fa-solid fa-spinner fa-spin"></i>
+    <main class="login-container glass-card welcome-box" aria-live="polite">
+        <i class="fa-solid fa-graduation-cap logo-icon" aria-hidden="true"></i>
+        <h1>EduAI'a Giriş Yapılıyor...</h1>
+        <p>Rolünüz kontrol ediliyor, lütfen bekleyin.</p>
+        <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+        <noscript>
+            <p>Devam etmek için JavaScript gereklidir.</p>
+        </noscript>
+        <div class="welcome-actions">
+            <a href="login.html" class="btn-outline btn-block">Giriş sayfasına git</a>
         </div>
-    </div>
+    </main>
 
     <!-- Firebase Scriptleri (Compat) -->
     <script src="https://www.gstatic.com/firebasejs/13.2.0/firebase-app-compat.js"></script>

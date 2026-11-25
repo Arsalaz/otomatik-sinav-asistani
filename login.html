@@ -9,20 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body class="login-body">
-    <div class="background-animation"></div>
-    
-    <div class="login-container glass-card">
+    <main class="login-container glass-card">
         <div class="login-header">
             <i class="fa-solid fa-graduation-cap logo-icon"></i>
-            <h2>EduAI'a Hoş Geldiniz</h2>
+            <h1>EduAI'a Hoş Geldiniz</h1>
             <p>Lütfen giriş yapmak istediğiniz rolü seçin</p>
         </div>
 
-        <div class="role-selector">
-            <button class="role-btn active" id="btnTeacher">
+        <div class="role-selector" role="group" aria-label="Giriş rolü">
+            <button type="button" class="role-btn active" id="btnTeacher">
                 <i class="fa-solid fa-chalkboard-user"></i> Öğretmen
             </button>
-            <button class="role-btn" id="btnStudent">
+            <button type="button" class="role-btn" id="btnStudent">
                 <i class="fa-solid fa-user-graduate"></i> Öğrenci
             </button>
         </div>
@@ -38,17 +36,17 @@
                 <input type="password" id="password" name="password" autocomplete="current-password" class="login-input" placeholder="••••••••" required>
             </div>
 
-            <button type="submit" class="btn-primary" id="loginBtn">
+            <button type="submit" class="btn-primary btn-block" id="loginBtn">
                 Giriş Yap <i class="fa-solid fa-arrow-right-to-bracket"></i>
             </button>
             
             <div class="auth-divider">veya</div>
             
-            <button type="button" class="btn-outline" id="registerBtn" style="width: 100%; justify-content: center;">
+            <button type="button" class="btn-outline btn-block" id="registerBtn">
                 Yeni Hesap Oluştur
             </button>
         </form>
-    </div>
+    </main>
 
     <!-- Firebase Auth Scriptleri (Compat) -->
     <script src="https://www.gstatic.com/firebasejs/13.2.0/firebase-app-compat.js"></script>

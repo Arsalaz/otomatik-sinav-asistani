@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="background-animation"></div>
+    <a href="#main" class="skip-link">Ana içeriğe geç</a>
 
     <div class="app-container">
         <!-- Sol Menü (Sidebar) -->
@@ -21,7 +21,7 @@
                 <i class="fa-solid fa-graduation-cap"></i>
                 <span>EduAI Asistan</span>
             </div>
-            <nav class="menu">
+            <nav class="menu" aria-label="Ana menü">
                 <a href="#" class="menu-item active" id="menu-create-exam">
                     <i class="fa-solid fa-wand-magic-sparkles"></i>
                     Sınav Oluştur
@@ -35,25 +35,25 @@
                     Sınav Gönder
                 </a>
             </nav>
-            <div class="user-profile" style="margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-                <p style="color: #94a3b8; font-size: 0.8rem; margin-bottom: 5px;">Giriş Yapılan Hesap:</p>
-                <div style="color: white; font-size: 0.9rem; margin-bottom: 5px; word-break: break-all;" id="userEmailDisplay">Yükleniyor...</div>
-                <div style="font-size: 0.8rem; color: var(--primary); font-weight: bold; margin-bottom: 15px;" id="userRoleDisplay">-</div>
-                <button class="btn-outline" id="logoutBtn" style="width: 100%; border-color: #ef4444; color: #ef4444; padding: 10px; display: flex; justify-content: center; gap: 8px;">
+            <div class="sidebar-user">
+                <p class="sidebar-user-label">Giriş Yapılan Hesap:</p>
+                <div class="sidebar-user-email" id="userEmailDisplay">Yükleniyor...</div>
+                <div class="sidebar-user-role" id="userRoleDisplay">-</div>
+                <button class="btn-outline btn-logout" id="logoutBtn">
                     <i class="fa-solid fa-power-off"></i> Çıkış Yap
                 </button>
             </div>
         </aside>
 
         <!-- Ana İçerik -->
-        <main class="main-content">
+        <main class="main-content" id="main">
             <header class="header">
                 <div>
                     <h1 id="pageTitle">Yeni Sınav Oluştur</h1>
                     <p id="pageDesc">MEB müfredatına uygun yapay zeka destekli sorular.</p>
                 </div>
                 <div class="user-profile">
-                    <img src="https://ui-avatars.com/api/?name=Öğretmen&background=4F46E5&color=fff" alt="Profil">
+                    <img src="https://ui-avatars.com/api/?name=Öğretmen&background=0F172A&color=fff" alt="Öğretmen profil fotoğrafı">
                 </div>
             </header>
 
@@ -112,7 +112,7 @@
                         <span class="toggle-label">Yanlış cevaplar için telafi videosu ekle (Yakında)</span>
                     </div>
 
-                    <button id="generateBtn" class="btn-primary">
+                    <button id="generateBtn" class="btn-primary btn-block">
                         <i class="fa-solid fa-robot"></i> Sınavı Oluştur & Google Forms'a Aktar
                     </button>
                 </div>
@@ -136,19 +136,19 @@
                     </div>
 
                     <!-- Sonuç Alanı (Önizleme ve Sınıfa Gönder) -->
-                    <div id="resultArea" class="result-area hidden" style="width: 100%; text-align: left; overflow-y: auto; max-height: 70vh; padding-right: 10px;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--glass-border); padding-bottom: 15px; margin-bottom: 20px;">
-                            <h3 style="color: white; margin: 0;"><i class="fa-solid fa-check-double" style="color: var(--success);"></i> Sınav Hazır</h3>
-                            <div style="display: flex; gap: 10px;">
-                                <select id="targetClassSelect" style="padding: 8px; border-radius: 8px; background: rgba(15,23,42,0.8); color: white; border: 1px solid var(--glass-border);">
+                    <div id="resultArea" class="result-area hidden">
+                        <div class="result-head">
+                            <h3><i class="fa-solid fa-check-double"></i> Sınav Hazır</h3>
+                            <div class="result-actions">
+                                <select id="targetClassSelect" aria-label="Hedef sınıf">
                                     <option value="">Sınıf Seçin...</option>
                                 </select>
-                                <button class="btn-primary" id="assignToClassBtn" style="margin: 0; padding: 8px 15px;">
+                                <button class="btn-primary" id="assignToClassBtn">
                                     <i class="fa-solid fa-paper-plane"></i> Sınıfa Gönder
                                 </button>
                             </div>
                         </div>
-                        <div id="examPreviewContent" style="color: #e2e8f0;">
+                        <div id="examPreviewContent">
                             <!-- Üretilen sorular buraya eklenecek -->
                         </div>
                     </div>
@@ -156,60 +156,57 @@
             </div>
 
             <!-- BÖLÜM 2: SINIFLARIM (Başlangıçta Gizli) -->
-            <div class="content-grid hidden" id="section-classes" style="grid-template-columns: 1fr;">
-                <div class="glass-card" style="margin-bottom: 20px; display: flex; gap: 20px; align-items: flex-end;">
-                    <div class="form-group" style="margin: 0; flex: 1;">
+            <div class="content-grid single-col hidden" id="section-classes">
+                <div class="glass-card card-spaced inline-form">
+                    <div class="form-group">
                         <label for="newClassName">Yeni Sınıf Adı</label>
-                        <input type="text" id="newClassName" placeholder="Örn: 9/A Sınıfı" style="background: rgba(15, 23, 42, 0.6); color: white; padding: 12px; border: 1px solid var(--glass-border); border-radius: 12px; width: 100%;">
+                        <input type="text" id="newClassName" placeholder="Örn: 9/A Sınıfı">
                     </div>
-                    <button class="btn-primary" id="createClassBtn" style="margin: 0; width: auto; padding: 12px 24px;">
+                    <button class="btn-primary" id="createClassBtn">
                         <i class="fa-solid fa-plus"></i> Sınıf Oluştur
                     </button>
                 </div>
 
-                <div class="glass-card" style="min-height: 400px;">
-                    <h3 style="color: white; border-bottom: 1px solid var(--glass-border); padding-bottom: 15px; margin-bottom: 15px;">Mevcut Sınıflarınız</h3>
+                <div class="glass-card card-tall">
+                    <h3 class="card-title">Mevcut Sınıflarınız</h3>
                     <div id="classesList">
                         <!-- Dinamik Sınıflar buraya gelecek -->
                     </div>
                 </div>
             </div>
         </main>
-        </main>
     </div>
 
     <!-- Raporlama Modalı (Google Forms Benzeri Raporlama) -->
-    <div id="reportModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center;">
-        <div class="glass-card" style="width: 90%; max-width: 900px; max-height: 90vh; overflow-y: auto; position: relative;">
-            <button id="closeModalBtn" style="position: absolute; top: 15px; right: 20px; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">
+    <div id="reportModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="reportModalTitle">
+        <div class="glass-card modal-card">
+            <button id="closeModalBtn" class="modal-close" aria-label="Raporu kapat">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <h2 id="reportModalTitle" style="color: white; margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
-                Sınav Raporu
-            </h2>
+            <h2 id="reportModalTitle" class="modal-title">Sınav Raporu</h2>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px;">
-                <div style="background: rgba(15,23,42,0.6); border: 1px solid var(--glass-border); padding: 15px; border-radius: 12px; text-align: center;">
-                    <h3 style="color: var(--text-muted); font-size: 0.9rem;">Sınıf Ortalaması</h3>
-                    <div id="reportAvgScore" style="font-size: 2rem; font-weight: bold; color: var(--primary);">-</div>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <h3>Sınıf Ortalaması</h3>
+                    <div id="reportAvgScore" class="stat-value">-</div>
                 </div>
-                <div style="background: rgba(15,23,42,0.6); border: 1px solid var(--glass-border); padding: 15px; border-radius: 12px; text-align: center;">
-                    <h3 style="color: var(--text-muted); font-size: 0.9rem;">Katılım</h3>
-                    <div id="reportParticipation" style="font-size: 2rem; font-weight: bold; color: #10b981;">-</div>
+                <div class="stat-card">
+                    <h3>Katılım</h3>
+                    <div id="reportParticipation" class="stat-value is-success">-</div>
                 </div>
             </div>
 
             <!-- En Çok Yanlış Yapılan Sorular -->
-            <div style="margin-bottom: 30px;">
-                <h3 style="color: white; font-size: 1.1rem; margin-bottom: 15px;"><i class="fa-solid fa-triangle-exclamation" style="color: #f59e0b;"></i> Sık Yapılan Hatalar (En Zor Sorular)</h3>
+            <div class="modal-section">
+                <h3><i class="fa-solid fa-triangle-exclamation icon-warning"></i> Sık Yapılan Hatalar (En Zor Sorular)</h3>
                 <div id="hardestQuestionsList">
                     <!-- Dinamik yüklenecek -->
                 </div>
             </div>
 
             <!-- Öğrenci Bazlı Detay -->
-            <div>
-                <h3 style="color: white; font-size: 1.1rem; margin-bottom: 15px;"><i class="fa-solid fa-users-viewfinder" style="color: var(--primary);"></i> Öğrenci Bazlı Analiz</h3>
+            <div class="modal-section">
+                <h3><i class="fa-solid fa-users-viewfinder icon-accent"></i> Öğrenci Bazlı Analiz</h3>
                 <div id="studentAnalysisList">
                     <!-- Dinamik yüklenecek -->
                 </div>

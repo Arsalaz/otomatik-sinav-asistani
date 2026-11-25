@@ -21,7 +21,9 @@ MEB müfredatı PDF kitaplarını analiz ederek Google Gemini API ile 5-8. sın�
 - [✔] **Test Paketi:** `test_sinav_suite.py` içinde 6/6 test başarıyla geçti.
 - [⚠] **Güvenlik (açık):** Gemini API anahtarı ilk commit'te (`0bfdc91`) kaynak koda gömülüydü ve GitHub geçmişinde duruyor. Anahtar **iptal edilip yenilenmeli**; yeni anahtar yalnızca `GEMINI_API_KEY` ortam değişkeni / `.env` ile verilmeli.
 - [✔] **server.py onarımı (2026-11-25):** Çalışma kopyasındaki yarım kalmış değişiklik (SyntaxError) atıldı, `/generate` akışı sadeleştirildi, model `GEMINI_MODEL` ile seçilebilir hale getirildi. Test: 6/6 geçti.
-- [ ] **Firebase SDK (10.8.0)** sürüm yükseltmesi ve arayüz modernizasyonu — bekliyor.
+- [✔] **Firebase SDK 13.2.0 + Font Awesome 6.7.2** yükseltmesi (2026-11-25).
+- [▶] **Arayüz yeniden tasarımı (60-30-10):** styles.css, login/teacher/student/index sayfaları. Uygulayıcı: Claude sub-agent. Codex review kotası bilinmediği için atlandı; agy review yapılacak.
+- [⚠] **Antigravity (agy) headless izin engeli:** `agy -p`/stdin çağrısı `command` izni istediğinden tasarım spesifikasyonu üretemedi; orkestratör yazdı.
 - [✔] **Bağımsız Exe Dağıtımı:** PyInstaller ile tek parça `OtomatikSinavAsistani.exe` (44.7 MB) derlendi ve `D:\Projeler\dist\` altına kopyalandı.
 
 ---
